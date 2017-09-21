@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>zbw.kml</name>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark>
+		<name>ZBW1</name>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<Polygon>
+			<tessellate>1</tessellate>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						-70.0350430019935,46.67722391688977,0 -70.2241265828733,46.23526508907182,0 -70.28817200624802,45.88443613988612,0 -70.55271894507378,45.65022874219316,0 -70.83798869966641,45.25991058693787,0 -71.26437984876856,45.28129916023111,0 -71.51775401191884,45.00950703994011,0 -74.89894395532265,44.99967445025367,0 -76.30888049175098,44.16151974325383,0 -76.93097551994853,43.5975795249428,0 -76.92169489589422,42.6513996557993,0 -73.91172839897182,40.78702990322281,0 -73.38068679516613,40.75035102242511,0 -73.69096661499164,40.1880686952097,0 -73.29912444522222,40.23068822621264,0 -72.44177412444462,39.67937791255839,0 -67.6721295683172,41.3830732786121,0 -66.93070747549633,44.77229211638622,0 -67.76072354478747,45.71876204444997,0 -67.78299831653925,47.04893714689671,0 -68.59458076526826,47.30526586840202,0 -69.2199383884393,47.44592048260382,0 -70.0350430019935,46.67722391688977,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+</Document>
+</kml>
