@@ -8,7 +8,10 @@ import java.nio.file.Files
 import java.nio.file.Paths
 
 fun main(args: Array<String>) {
-    val inputStream: InputStream = File(args[0]).inputStream()
+    var inputStream: InputStream = File("res/zbw.kml").inputStream()
+    if(!args.isEmpty() && args.get(0) != null) run {
+        inputStream = File(args[0]).inputStream()
+    }
     val inputString = inputStream.bufferedReader().use { it.readText() }
 
     var finalOutputString = "{\n  \"polygons\": [\n"
@@ -21,11 +24,11 @@ fun main(args: Array<String>) {
         if(!place.contains("<Polygon>"))
             return
 
-        var thisPolyString = "{\n"
+        var thisPolyString = "    {\n"
 
         // name of the Placemark, which is a Polygon
         val name = StringUtils.substringBetween(place, "<name>", "</name>")
-        thisPolyString += "\"name\": \"$name\",\n"
+        thisPolyString += "      \"name\": \"$name\",\n"
 
         // creates a substring containing just the coordinate triplets of the polygon
         var coords = StringUtils.substringBetween(place, "<coordinates>", "</coordinates>")
@@ -44,10 +47,10 @@ fun main(args: Array<String>) {
 
             if(j != 0)
                 coordPairString += ",\n"
-            coordPairString += "[" + coordPairs[0] + ", " + coordPairs[1] + "]"
+            coordPairString += "        [" + coordPairs[0] + ", " + coordPairs[1] + "]"
         }
 
-        thisPolyString += "\"points\": [\n$coordPairString\n]\n}"
+        thisPolyString += "      \"points\": [\n$coordPairString\n      ]\n    }"
         if(i != 0)
             finalOutputString += ",\n"
         finalOutputString += thisPolyString
